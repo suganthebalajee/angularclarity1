@@ -1,0 +1,33 @@
+<div class="content-area">
+            <div class="row">
+			<div class="col-lg-12 col-xs-12s">
+				 <div class="content-todos" >
+					<div class="card" *ngFor="let todos of userTodos">
+						<div class="card-block">
+						   <section class="form-block" >
+								<div class="form-group">
+									<div class="checkbox">
+										<input type="checkbox" id="checkrads_1" [checked]="todos.completed" [(ngModel)]="checkboxStatus"  (change)="updateTodo(checkboxStatus,todos.id)">
+										<label for="checkrads_1">{{todos.title}}</label>
+									</div>
+								</div>
+							</section>
+						</div>
+						<div class="card-footer">
+							<a class="btn btn-primary" (click)="deleteTodo(todos.id)">Delete Todo</a>
+						</div>			
+				</div>
+				
+				</div>
+				<div class="create-section content-create-todo">
+						<section class="form-block">
+							<div class="form-group">
+							<label for="formFields_7">Create Todo</label>
+							<input type="text" id="formFields_7"  [(ngModel)]="title"  placeholder="todo title" required>
+							<a class="btn btn-primary" (click)="createTodo(title, userTodos[0].userId)">Create Todo</a>
+						</div>
+						</section>
+					</div>
+			</div>
+	</div>
+	</div>

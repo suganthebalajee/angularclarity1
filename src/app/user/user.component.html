@@ -1,0 +1,22 @@
+<div class="content-area">
+	<div class="row">
+		<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12" *ngFor="let user of userDetails">
+			<div class="card">
+				<div class="card-header">         
+					{{user.username}}
+				</div>
+				<div class="card-block">
+					<div class="card-title">           
+						{{user.name}}
+					</div>
+					<div class="card-text">
+					   {{user.email}} 
+					</div>
+				</div>
+				<div class="card-footer">
+					 <a class="btn btn-primary" routerLink="/user/{{user.id}}">View User</a>
+				 </div>
+			</div>
+		</div>
+	</div>
+</div>
